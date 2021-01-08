@@ -1,14 +1,5 @@
-const length = 10;
-//Labirints + patreizējo pozīciju, atpakaļ iegūstu tikai virzienu
-let canvas = null;
-let ctx = null;
-
 const blockSize = 10;
-
-let count = 0;
-
 let previousLocations = [];
-let maze = [];
 
 function createMaze() {
     canvas = document.getElementById('mazeCanvas');
@@ -51,9 +42,6 @@ function makeStartAndExit(){
 
 function generateMaze(mazeLocation) {
     const availableDirections = getAvailableDirections(mazeLocation);
-
-    count++;
-    // console.log(count);
 
     if (availableDirections.length > 0) {
         const rnd = Math.floor(Math.random() * availableDirections.length);

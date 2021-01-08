@@ -1,14 +1,17 @@
-//NEW<
 const pos = {x: 1, y: 1};
 let finished = false;
-//>NEW
+const length = 85;
+let canvas = null;
+let ctx = null;
+let maze = [];
+
 function startGame(){
     var maze = createMaze();
     setUserControls();
 }
 
 function setUserControls(){
-    window.addEventListener("keyup", event => {
+    window.addEventListener("keydown", event => {
         let key = 0;
         switch(event.code) {
             case "KeyW":
@@ -36,7 +39,6 @@ function setUserControls(){
 }
 
 
-//NEW <
 function move(input){
 	if (finished)
 		return 0; //Finish reached
@@ -81,4 +83,4 @@ function move(input){
 		return -2;
 	
 	return 1;//Move done
-}//>NEW
+}
